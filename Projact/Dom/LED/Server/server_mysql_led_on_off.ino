@@ -7,9 +7,9 @@
 
 
 
-const char* ssid="Okt30_43";
-const char* password ="275399533S";
-const char* host = "http://192.168.100.238/";
+const char* ssid="Okt30";
+const char* password ="2";
+const char* host = "http://192.168.1.238/";
 
 
 void setup() {
