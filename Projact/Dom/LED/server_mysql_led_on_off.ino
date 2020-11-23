@@ -2,29 +2,29 @@
 #include<WiFiClient.h>
 #include<ESP8266HTTPClient.h>
 
-#define ON_Board_LED 2
+#define ON_Board_LED 2 // Константа на D4 вход  
 //define LED_D8 15
 
 
 
-const char* ssid="Okt30";
-const char* password ="2";
-const char* host = "http://192.168.1.238/";
+const char* ssid="Okt30"; //указатель на неизменную переменную с именем точки доступа Wi-fi
+const char* password ="2"; //пароль точки доступа
+const char* host = "http://192.168.1.238/"; // адресс отправки запроса 
 
 
 void setup() {
   // put your setup code here, to run once:
   //pinMode(D8, OUTPUT);
   //digitalWrite(D8, 0);
-  Serial.begin(115200);
-  delay(500);
+  Serial.begin(115200); //задает скорость передачи данных 
+  delay(500); //выставляем задержку пол секунды
 
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password); //--> Connect to your WiFi router
-  Serial.println("");
+  WiFi.mode(WIFI_STA);//выбор режима WIFI_AP точка доступа и WIFI_STA клиент 
+  WiFi.begin(ssid, password); // функция инициализируется подключения к роутеру 
+  Serial.println("");//выводит
     
-  pinMode(ON_Board_LED,OUTPUT); //--> On Board LED port Direction output
-  digitalWrite(ON_Board_LED, HIGH); //--> Turn off Led On Board
+  pinMode(ON_Board_LED,OUTPUT); //--> Устанавливаем режим работы выход(OUTPUT)
+  digitalWrite(ON_Board_LED, HIGH); //--> Функция подает высокий сигнал на вход D4(Включить его) 
 
   pinMode(D8,OUTPUT); //--> LED port Direction output
   digitalWrite(D8, LOW); //--> Turn off Led
