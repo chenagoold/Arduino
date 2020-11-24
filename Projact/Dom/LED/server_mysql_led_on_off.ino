@@ -26,23 +26,23 @@ void setup() {
   pinMode(ON_Board_LED,OUTPUT); //--> Устанавливаем режим работы выход(OUTPUT)
   digitalWrite(ON_Board_LED, HIGH); //--> Функция подает высокий сигнал на вход D4(Включить его) 
 
-  pinMode(D8,OUTPUT); //--> LED port Direction output
-  digitalWrite(D8, LOW); //--> Turn off Led
+  pinMode(D8,OUTPUT); //--> Устанвливает режим работы на выход(OUTPUT)
+  digitalWrite(D8, LOW); //--> Функция подает низкий сигнал на вход D8(выключить его)
 
-  //----------------------------------------Wait for connection
-  Serial.print("Connecting");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    //----------------------------------------Make the On Board Flashing LED on the process of connecting to the wifi router.
-    digitalWrite(ON_Board_LED, LOW);
-    delay(250);
-    digitalWrite(ON_Board_LED, HIGH);
-    delay(250);
+  //----------------------------------------Для подключения
+  Serial.print("Connecting");// передаст "Connection"
+  while (WiFi.status() != WL_CONNECTED) { //Возращает статус соединения если нет соидинения != (WL_CONNECTED-соединени с Wi-fi)
+    Serial.print(".");//вывод точки 
+    //----------------------------------------На устройстве мерцает диод пока не установит соединение с маршрутизатором .
+    digitalWrite(ON_Board_LED, LOW);// Диод выкл
+    delay(250); // задержка 250млс
+    digitalWrite(ON_Board_LED, HIGH); // Диод вкл
+    delay(250); // задержка 250млс
     //----------------------------------------
   }
   //----------------------------------------
-  digitalWrite(ON_Board_LED, HIGH); //--> Turn off the On Board LED when it is connected to the wifi router.
-  //----------------------------------------If successfully connected to the wifi router, the IP Address that will be visited is displayed in the serial monitor
+  digitalWrite(ON_Board_LED, HIGH); //--> Установлино соединение установлено
+  //----------------------------------------Для Успешное подключение выводим следующие данные  
   Serial.println("");
   Serial.print("Successfully connected to : ");
   Serial.println(ssid);
