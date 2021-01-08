@@ -2,10 +2,10 @@
 
 class Database{
 
-	private static $dbName = 'bdarduino';
+	private static $dbName = 'bdard';
 	private static $dbHost = 'localhost';
-	private static $dbUsername = 'admin';
-	private static $dbUserPassword = 'toor';
+	private static $dbUsername = '';
+	private static $dbUserPassword = '';
 
 	private static $cont = null;
 
