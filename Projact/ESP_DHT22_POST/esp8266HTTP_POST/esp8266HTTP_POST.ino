@@ -29,8 +29,8 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 // Replace with your network credentials
-const char* ssid     = "Genchik";
-const char* password = "275399533SD+";
+const char* ssid     = "_________";
+const char* password = "______________";
 
 // REPLACE with your Domain name and URL path or IP address with path
 const char* serverName = "http://192.168.100.243/esp8266/post-data.php";
